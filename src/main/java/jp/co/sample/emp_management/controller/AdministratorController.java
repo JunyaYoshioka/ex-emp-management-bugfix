@@ -110,7 +110,7 @@ public class AdministratorController {
 			model.addAttribute("errorMessage", "メールアドレスまたはパスワードが不正です。");
 			return toLogin();
 		}
-		return "/employee/showList";
+		return "redirect:/employee/showList";
 	}
 
 //	@RequestMapping("")
