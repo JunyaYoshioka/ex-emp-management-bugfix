@@ -29,6 +29,10 @@ public class AdministratorService {
 		administratorRepository.insert(administrator);
 	}
 	
+	public Administrator findByMailAddress(String mailAddress) {
+		return administratorRepository.findByMailAddress(mailAddress);
+	}
+	
 	/**
 	 * ログインをします.
 	 * @param mailAddress メールアドレス
@@ -39,4 +43,6 @@ public class AdministratorService {
 		Administrator administrator = administratorRepository.findByMailAddressAndPassward(mailAddress, passward);
 		return administrator;
 	}
+
+	
 }
