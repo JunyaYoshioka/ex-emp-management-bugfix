@@ -23,7 +23,7 @@ public class InsertAdministratorForm {
 	@Size(min = 1, max = 124, message = "パスワードを入力してください")
 	private String password;
 	/** 確認用パスワード */
-	
+
 	private String confirmationPassword;
 
 	public String getConfirmationPassword() {

@@ -74,9 +74,14 @@ public class AdministratorController {
 			return toInsert();
 		}
 		
+//		if(!form.getPassword().equals(form.getConfirmationPassword())) {
+//			model.addAttribute("confirmationPasswordError", "一致していません");
+//			return toInsert();
+//		}
+		
 		if(!form.getPassword().equals(form.getConfirmationPassword())) {
-			model.addAttribute("confirmationPasswordError", "一致していません");
-			return toInsert();
+		result.rejectValue("password", null, "一致していません");
+		return toInsert();
 		}
 		
 		Administrator administrator = new Administrator();
