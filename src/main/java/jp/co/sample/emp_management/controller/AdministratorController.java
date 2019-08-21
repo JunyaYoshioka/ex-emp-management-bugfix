@@ -78,7 +78,7 @@ public class AdministratorController {
 
 		if (!form.getPassword().equals(form.getConfirmationPassword())) {
 			result.rejectValue("password", null, "一致していません");
-			return toInsert();
+			//return toInsert();
 		}
 
 		Administrator existAdministrator = administratorService.findByMailAddress(form.getMailAddress());
@@ -86,7 +86,7 @@ public class AdministratorController {
 			// メールアドレスが重複しています
 			result.rejectValue("mailAddress", null, "メールアドレスが重複しています");
 
-			return toInsert();
+			//return toInsert();
 		}
 
 		if (result.hasErrors()) {
@@ -130,8 +130,8 @@ public class AdministratorController {
 			model.addAttribute("errorMessage", "メールアドレスまたはパスワードが不正です。");
 			return toLogin();
 		}
-
 		
+		session.setAttribute("administratorName", administrator.getName());
 		
 		return "forward:employee/showList";
 	}
