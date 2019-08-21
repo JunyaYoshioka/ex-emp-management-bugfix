@@ -131,7 +131,9 @@ public class AdministratorController {
 			return toLogin();
 		}
 
-		return "employee/showList";
+		
+		
+		return "forward:employee/showList";
 	}
 
 //	@RequestMapping("")
